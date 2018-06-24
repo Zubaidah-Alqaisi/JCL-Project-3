@@ -1,0 +1,28 @@
+//KC03GC1A JOB ,'ALQAISI',MSGCLASS=H                                    00010000
+//*                                                                     00020000
+//JSTEP01 EXEC PGM=ASMA90,PARM=ASA                                      00030001
+//*                                                                     00040001
+//SYSLIB DD DSN=SYS1.MACLIB,DISP=SHR                                    00050001
+//*                                                                     00060001
+//SYSIN DD DSN=ASMPGM3                                                  00070002
+//*                                                                     00080003
+//SYSLIN DD DSN=&&OBJMOD,SPACE=(3040,(40,40),,,ROUND),                  00090003
+//       DISP=(MOD,PASS,DELETE)                                         00100003
+//*                                                                     00110003
+//SYSPRINT DD SYSOUT=*                                                  00120003
+//*                                                                     00130003
+//SYSUT1 DD SPACE=(16384,(120,120),,,ROUND)                             00140003
+//*                                                                     00150003
+//JSTEP02 EXEC PGM=HEWL,COND=(0,LT)                                     00160003
+//*                                                                     00170003
+//SYSLIB DD DSN=CEE.SCEELKED,DISP=SHR                                   00180003
+//*                                                                     00190003
+//SYSLIN DD DSN=&&OBJMOD,DISP=(OLD,DELETE,DELETE)                       00200003
+//*                                                                     00210003
+//SYSMOD DD KC02322.CSCI465.LOADLIB(DATA3),                             00220003
+//       SPACE=(1024,(50,20,1)),                                        00230003
+//       DSNTYPE=LIBRARY,                                               00240003
+//       DISP=(MOD,KEEP,KEEP)                                           00250003
+//*                                                                     00260003
+//SYSPRINT DD SYSOUT=*                                                  00270003
+//                                                                      00280003
